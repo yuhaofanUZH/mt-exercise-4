@@ -15,15 +15,14 @@ num_threads=10
 
 SECONDS=0
 
+model_name="$1"  # Pass the model name as an argument
+
 logs=$base/logs
 
-model_name=deen_transformer_regular
-
 mkdir -p $logs
-
 mkdir -p $logs/$model_name
 
-OMP_NUM_THREADS=$num_threads python -m joeynmt train $configs/$model_name.yaml > $logs/$model_name/out 2> $logs/$model_name/err
+OMP_NUM_THREADS=$num_threads python -m joeynmt train $configs/${model_name}.yaml > $logs/$model_name/out 2> $logs/$model_name/err
 
 echo "time taken:"
 echo "$SECONDS seconds"
