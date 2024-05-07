@@ -30,21 +30,29 @@ Download Moses for post-processing:
     ./scripts/download_moses.sh
 
 In your current venv, clone the joeynmt directory
+
 	git clone https://github.com/yuhaofanUZH/joeynmt
+	
 Change directory
+
 	cd joeynmt
+
 Install JoeyNMT in editable mode
+
 	pip install -e .
 
 Then navigate back to mt-exercise-4 directory!
+
 	cd your_path/mt-exercise-4
+	
 And train two models:
 
 	./scripts/train.sh deen_transformer_pre_norm
 	./scripts/train.sh deen_transformer_post_norm
 
 log the perplexity of the model and visualize it:
+
 	python3 log_ppl.py
 	python3 plot.py
-	
+
 The training process can be interrupted at any time, and the best checkpoint will always be saved. It is also possible to continue training from there later on.
